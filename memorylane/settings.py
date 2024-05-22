@@ -106,7 +106,7 @@ CSRF_TRUSTED_ORIGINS = [
     "https://*.herokuapp.com"
 ]
 
-LOGIN_REDIRECT_URL = 'post_list'
+LOGIN_REDIRECT_URL = 'home'
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators

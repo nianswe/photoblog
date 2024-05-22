@@ -20,7 +20,7 @@ class Photo(models.Model):
     date_created = models.DateTimeField(auto_now_add=True)
 
 
-class Post(models.Model):
+class Blog(models.Model):
     
     class Status(models.TextChoices):
         DRAFT = 'DF', 'Draft'
