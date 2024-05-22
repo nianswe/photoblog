@@ -1,0 +1,13 @@
+<html>
+    <head>
+        <title>Memory Lane</title>
+    </head>
+    <body>
+        <h1>Memory Lane</h1>
+        {%  if user.is_authenticated %}
+            <p>You are logged in as {{ request.user }}. Click here to <a href="{% url 'logout' %}">log out</a></p>
+        {% endif %}
+        {% block content %}{% endblock content %}
+        
+    </body>
+</html>
