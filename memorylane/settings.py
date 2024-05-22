@@ -37,6 +37,9 @@ DEBUG = 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = ['.herokuapp.com', '127.0.0.1', '.localhost', '.herokuapp.com']
 
+# Mediafiles
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR.joinpath('media/')
 
 # Application definition
 
