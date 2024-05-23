@@ -1,0 +1,91 @@
+{% load static %}
+
+<header>
+    
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="{% url 'home' %}">- MEMORY Lane -</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                
+                <!-- AllAuth links -->
+                {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link">&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == home_url %}active{% endif %}" aria-current="page" href="{% url 'home' %}">Home</a>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == blog_create_url %}active{% endif %}" aria-current="page" href="upload">Add Post</a>
+                    </li>
+					
+					<li class="nav-item">
+                        <a class="nav-link {% if request.path == blog_create_url %}active{% endif %}" aria-current="page" href="photo">View Photos</a>
+                    </li>
+					
+                    <li class="nav-item">
+                        <a class="nav-link">&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page" href="{% url 'logout' %}">Logout</a>
+                                        
+                    <li class="nav-item">
+                        <a class="nav-link">&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                    </li>
+                        
+                {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == home_url %}active{% endif %}" aria-current="page" href="{% url 'home' %}">Home</a>
+                    </li>
+                                        
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
+                            href="{% url 'signup' %}">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page" href="{% url 'login' %}">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                    </li>
+                    
+                {% endif %}
+            </ul>
+
+                       
+            
+            <!-- View logged in user --> 
+            {% if user.is_authenticated %}
+                <p class="text-end m-3">You are logged in as {{ user }}</p>
+            {% else %}
+                <p class="text-end m-3">You are not logged in</p>
+            {% endif %}
+
+            <span class="navbar-text text-muted">
+                Walk along your memory lane...
+            </span>
+          </div>
+        </div>
+      </nav>
+    
+    <div id="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <div id="sidebar">
+        <h2>Private Blog</h2>
+        <p>This is the private blog.</p>
+    </div>
+</header>

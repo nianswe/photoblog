@@ -2,14 +2,25 @@
     <head>
         <title>Memory Lane</title>
     </head>
+    
+    
     <body>
-        <p><a href="{% url 'home' %}">Home</a></p>
-        <p><a href="{% url 'blog_and_photo_upload' %}">Create Blog Post</a></p>
+    {% include "includes/header.html" %}
+        
         <h1>Memory Lane</h1>
         {%  if user.is_authenticated %}
             <p>You are logged in as {{ request.user }}. Click here to <a href="{% url 'logout' %}">log out</a></p>
         {% endif %}
-        {% block content %}{% endblock content %}
+            
+        <main class="flex-shrink-0 main-bg">
         
+            {% block content %}
+            <!-- Content Goes here -->
+            {% endblock content %}
+    
+        </main>    
+
+    <!-- Footer -->
+    {% include "includes/footer.html" %}    
     </body>
 </html>

@@ -18,14 +18,17 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from home import views as index_views
 
 import authentication.views
 
 
 urlpatterns = [
+    path('', include("home.urls"), name="home-urls"),
     path('admin/', admin.site.urls),
     path("home/", include("blog.urls"), name="blog-urls"),
-    path("", include("authentication.urls"), name="authentication-urls"),
+    path("auth/", include("authentication.urls"), name="authentication-urls"),
+    
 ]
 
 if settings.DEBUG:

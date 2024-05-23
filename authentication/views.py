@@ -5,8 +5,6 @@ from django.contrib.auth import login, authenticate, logout
 from . import forms
 from django.views.generic import View
 
-
-
 class LoginPageView(View):
     template_name = 'authentication/login.html'
     form_class = forms.LoginForm
@@ -34,13 +32,6 @@ class LoginPageView(View):
 def logout_user(request):
     logout(request)
     return redirect('login')
-
-# authentication/views.py
-from django.conf import settings
-from django.contrib.auth import login
-from django.shortcuts import redirect, render
-
-from . import forms
 
 
 def signup_page(request):

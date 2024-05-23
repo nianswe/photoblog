@@ -43,11 +43,7 @@ def view_blog(request, blog_id):
     blog = get_object_or_404(models.Blog, id=blog_id)
     return render(request, 'blog/view_blog.html', {'blog': blog})
  
-@login_required
-def home(request):
-    photos = models.Photo.objects.all()
-    blogs = models.Blog.objects.all()
-    return render(request, 'blog/home.html', context={'photos': photos, 'blogs': blogs})
+
  
  
 def edit_blog(request, blog_id):
