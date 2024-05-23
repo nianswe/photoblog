@@ -1,9 +1,17 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h2>Upload a Photo</h2>
-    <form method="post" enctype="multipart/form-data">
-        {{ form.as_p }}
-        {% csrf_token %}
-        <button type="submit" >Submit</button>
-    </form>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-4 mt-3 left">
+            <div class="row">
+                <h2>Upload a Photo</h2>
+                    <form method="post" enctype="multipart/form-data">
+                    {{ form.as_p }}
+                    {% csrf_token %}
+                    <button type="submit" >Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock content %}

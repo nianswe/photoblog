@@ -1,7 +1,18 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
-    <h2>Home</h2>
-    {% for photo in photos %}
-        <img src="{{ photo.image.url }}">
-    {% endfor %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-3 mt-3 left">
+            <div class="row">
+                {% for photo in photos %}
+                    <img src="{{ photo.image.url }}">
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
 {% endblock content %}
+
+{% block copyright %} Copyright 2023 Niklas Andersson {% endblock copyright %}

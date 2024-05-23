@@ -1,26 +1,74 @@
-<html>
-    <head>
-        <title>Memory Lane</title>
-    </head>
+{% load static %}
+
+{% url 'home' as home_url %}
+{% url 'login' as login_url %}
+{% url 'signup' as signup_url %}
+{% url 'logout' as logout_url %}
+{% url 'blog_create' as blog_create_url %}
+{% url 'blog' as blog_url %}
+{% url 'blog_view' as blog_view_url %}
+{% url 'photo_upload' as photo_upload_url %}
+{% url 'photo_upload' as photo_upload_url %}
+{% url 'create_multiple_photos' as create_multiple_photos_url %}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="Niklas Andersson">
+    <meta name="language" content="english">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title -->
+    <title>Memory Lane</title>
     
+    <!-- Favicon  credit: https://www.iconarchive.com/show/material-icons-by-pictogrammers/pine-tree-icon.html-->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/Pelfusion-Long-Shadow-Media-Camera.256.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/Pelfusion-Long-Shadow-Media-Camera.32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/Pelfusion-Long-Shadow-Media-Camera.16.png">
     
-    <body>
+    <!-- Google Fonts CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body class="d-flex flex-column h-100 main-bg">
     {% include "includes/header.html" %}
-        
-        <h1>Memory Lane</h1>
+              
         {%  if user.is_authenticated %}
             <p>You are logged in as {{ request.user }}. Click here to <a href="{% url 'logout' %}">log out</a></p>
         {% endif %}
             
-        <main class="flex-shrink-0 main-bg">
+        <main>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-8 mt-3 left">
+                        <div class="row">
         
-            {% block content %}
-            <!-- Content Goes here -->
-            {% endblock content %}
+                            {% block content %}
+                            <!-- Content Goes here -->
+                            {% endblock content %}
+                        </div>
+                    </div>
+                </div>
+            </div>
     
         </main>    
 
     <!-- Footer -->
     {% include "includes/footer.html" %}    
-    </body>
+</body>
 </html>

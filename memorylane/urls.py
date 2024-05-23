@@ -26,7 +26,7 @@ import authentication.views
 urlpatterns = [
     path('', include("home.urls"), name="home-urls"),
     path('admin/', admin.site.urls),
-    path("home/", include("blog.urls"), name="blog-urls"),
+    path("blog/", include("blog.urls"), name="blog-urls"),
     path("auth/", include("authentication.urls"), name="authentication-urls"),
     
 ]

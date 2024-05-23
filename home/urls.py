@@ -8,7 +8,7 @@ import authentication.views
 urlpatterns = [
     # path('', views.PostList.as_view(), name='post_list'),
     
-    path('', home.views.photo_home, name='photos'),
+    path('', home.views.home, name='home'),
 ]
     
     
