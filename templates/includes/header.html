@@ -1,13 +1,10 @@
 {% load static %}
 
 <header>
-    <a href="index.html">
-        <h1 id="logo">Memory Lane</h1>
-    </a>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
         <!-- Logo -->
-            <a class="navbar-brand" href="#"><img src="{% static 'images/logo.webp' %}" alt="logo" class="logo"></a>
+            <a class="navbar-brand" href="{% url 'home' %}"><img src="{%  static '/assets/logos/logo400.png' %}" alt="logo" class="logo"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -17,36 +14,30 @@
                 {% if user.is_authenticated %}
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == home_url %}active{% endif %}" aria-current="page" href="{% url 'home' %}">Home</a>
-                    </li>        
-                    <li class="nav-item">
-                        <a class="nav-link {% if request.path == blog_create_url %}active{% endif %}" aria-current="page" href="/blog/upload">Add Post</a>
-                    </li>
-                                
+                    </li> 
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == blog_url %}active{% endif %}" aria-current="page" href="/blog">Blog</a>
                     </li>
-                            
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == blog_create_url %}active{% endif %}" aria-current="page" href="/blog/upload">Add Post</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == blog_view_url %}active{% endif %}" aria-current="page" href="/blog/photo">View Photos</a>
                     </li>
-                         
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == photo_upload_url %}active{% endif %}" aria-current="page" href="/blog/photo/upload">Upload Photo</a>
                     </li>
-
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == create_multiple_photos_url %}active{% endif %}" aria-current="page" href="/blog/photo/upload-multiple">Upload Multiple Photos</a>
                     </li>
-
                     <li class="nav-item">
-                                <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page" href="{% url 'logout' %}">Logout</a>
+                        <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page" href="{% url 'logout' %}">Logout</a>
                     </li>
                             
                 {% else %}
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == home_url %}active{% endif %}" aria-current="page" href="{% url 'home' %}">Home</a>
                     </li>
-                            
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
                                     href="{% url 'signup' %}">Register</a>
