@@ -5,8 +5,8 @@
     <h2>Photos</h2>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-5 mt-3 left">
-                <div class="row">
+            <div>
+                <div class="photos">
                     {% for photo in photos %}
                         <img src="{{ photo.image.url }}">
                         <p>{{ photo.caption }}</p>

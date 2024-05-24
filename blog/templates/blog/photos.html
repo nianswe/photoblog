@@ -3,13 +3,11 @@
     <h2>Photos</h2>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-6 mt-3 left">
-                <div class="row">
-                    {% for photo in photos %}
+            <div class="about">
+                {% for photo in photos %}
                         <img src="{{ photo.image.url }}">
                         <p>{{ photo.caption }}</p>
-                    {% endfor %}
-                </div>
+                {% endfor %}
             </div>
         </div>
     </div>

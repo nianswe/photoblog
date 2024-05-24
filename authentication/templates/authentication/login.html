@@ -1,12 +1,23 @@
-
 {% extends 'base.html' %}
 {% block content %}
-    <p>{{ message }}</p>
-    <form method="post">
-        {{ form.as_p }}
-        {% csrf_token %}
-        <button type="submit" >Submit</button>
-    </form>
+    <h5>Welcome, Pleace Login...</h5>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="form">
+                <div class="row">
+                    <p>{{ message }}</p>
+                    <form method="post">
+                        {{ form.as_p }}
+                        {% csrf_token %}
+                    <button type="submit" >Submit</button>
+                    </form>
+                    <p>If you don't have an account? <a href="{% url 'signup' %}">Sign up now!</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 {% endblock content %}
 
 
