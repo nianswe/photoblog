@@ -15,10 +15,24 @@ class PublishedManager(models.Manager):
 
 
 class Photo(models.Model):
+    
+    class Status(models.TextChoices):
+        DRAFT = 'DF', 'Draft'
+        PUBLISHED = 'PB', 'Published'
+        
+    
+    class PubStatus(models.TextChoices):
+        PRIVATE = 'PR', 'Private'
+        SHARED = 'SH', 'Shared'
+    
+    
     image = models.ImageField()
-    caption = models.CharField(max_length=128, blank=True)
-    uploader = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    id = models.AutoField(primary_key=True)
+    caption = models.CharField(max_length=128, null=False, blank=False)
+    uploader = models.ForeignKey(User, on_delete=models.CASCADE)
     date_created = models.DateTimeField(auto_now_add=True)
+    status = models.CharField(max_length=2, choices=Status.choices, default=Status.PUBLISHED)
+    pubstatus = models.CharField(max_length=2, choices=PubStatus.choices, default=PubStatus.PRIVATE)
     
     IMAGE_MAX_SIZE = (800, 800)
 
@@ -28,6 +42,13 @@ class Photo(models.Model):
         # save the resized image to the file system
         # this is not the model save method!
         image.save(self.image.path)
+        
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+        self.resize_image()
+        
+    def __str__(self):
+        return self.caption + ' (' + self.pubstatus + ')'
 
 
 class Blog(models.Model):

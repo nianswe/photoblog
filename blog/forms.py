@@ -3,10 +3,11 @@ from django import forms
 from . import models
 
 class PhotoForm(forms.ModelForm):
+    edit_photo = forms.BooleanField(widget=forms.HiddenInput, initial=True)
         
     class Meta:
         model = models.Photo
-        fields = ['image', 'caption']
+        fields = ['image', 'caption', 'status', 'pubstatus']
         
     
 class BlogForm(forms.ModelForm):
@@ -20,3 +21,7 @@ class BlogForm(forms.ModelForm):
 
 class DeleteBlogForm(forms.Form):
     delete_blog = forms.BooleanField(widget=forms.HiddenInput, initial=True)
+    
+
+class DeletePhotoForm(forms.Form):
+    delete_photo = forms.BooleanField(widget=forms.HiddenInput, initial=True)

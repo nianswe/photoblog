@@ -1,20 +1,20 @@
 {% extends 'base.html' %}
 {% block content %}
-    <p>Welcome to Memory Lane....</p>
-
-    <h2>Photos</h2>
+    <h2>List Photos</h2>
     <div class="container-fluid">
         <div class="row">
             <div class="col-5 mt-3 left">
                 <div class="row">
                     {% for photo in photos %}
-                        <img src="{{ photo.image.url }}">
-                        <p>{{ photo.caption }}</p>
+                    <form method="post" enctype="multipart/form-data">
+                        {{ edit_photo_form.as_p }}
+                        {% csrf_token %}
+                        <button type="submit" >Save</button>
+                    </form>
+                    <p>{{ photo.image }}</p>
                     {% endfor %}
                 </div>
             </div>
         </div>
     </div>
-        
-    
 {% endblock content %}

@@ -1,11 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
-    <p>You managed to log in! Aren't you lucky.</p>
-
     <h2>Photos</h2>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-3 mt-3 left">
+            <div class="col-6 mt-3 left">
                 <div class="row">
                     {% for photo in photos %}
                         <img src="{{ photo.image.url }}">
