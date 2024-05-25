@@ -15,6 +15,12 @@ class PublishedManager(models.Manager):
         return super().get_queryset()\
                     .filter(status=Blog.Status.PUBLISHED)
 
+class PhotoPublishedManager(models.Manager):
+    def get_queryset(self):
+        return super().get_queryset()\
+                    .filter(status=Photo.Status.PUBLISHED)
+
+
 class Photo(models.Model):
     
     class Status(models.TextChoices):
@@ -26,31 +32,33 @@ class Photo(models.Model):
         PRIVATE = 'PR', 'Private'
         SHARED = 'SH', 'Shared'
     
+    
     # image = models.ImageField()
     image = CloudinaryField('image', default='placeholder')
-    slug = AutoSlugField(populate_from='image', unique=True, null=True)
+    slug = AutoSlugField(populate_from='image', unique=True)
     id = models.AutoField(primary_key=True)
     caption = models.CharField(max_length=128, null=False, blank=False)
     uploader = models.ForeignKey(User, on_delete=models.CASCADE)
     date_created = models.DateTimeField(auto_now_add=True)
+    published = PhotoPublishedManager()
     status = models.CharField(max_length=2, choices=Status.choices, default=Status.PUBLISHED)
     pubstatus = models.CharField(max_length=2, choices=PubStatus.choices, default=PubStatus.PRIVATE)
     
-    # IMAGE_MAX_SIZE = (800, 800)
+    IMAGE_MAX_SIZE = (800, 800)
 
-    # def resize_image(self):
-        # image = Image.open(self.image)
-        # image.thumbnail(self.IMAGE_MAX_SIZE)
+    def resize_image(self):
+        image = Image.open(self.image)
+        image.thumbnail(self.IMAGE_MAX_SIZE)
         # save the resized image to the file system
         # this is not the model save method!
-        # image.save(self.image.path)
+        image.save(self.image.path)
         
-    # def save(self, *args, **kwargs):
-    #    super().save(*args, **kwargs)
-    #    self.resize_image()
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+        self.resize_image()
         
-    #def __str__(self):
-    #    return self.caption + ' (' + self.pubstatus + ')'
+    def __str__(self):
+        return self.caption + ' (' + self.pubstatus + ')'
 
 
 class Blog(models.Model):
@@ -60,13 +68,13 @@ class Blog(models.Model):
         PUBLISHED = 'PB', 'Published'
         
     
-    class PubStatus(models.TextChoices):
+    class Photo(models.TextChoices):
         PRIVATE = 'PR', 'Private'
         SHARED = 'SH', 'Shared'    
     
     title = models.CharField(max_length=250)
-    # slug = models.SlugField(max_length=250, unique_for_date='publish')
-    slug = AutoSlugField(populate_from='title', unique=True, null=True)
+    slug = AutoSlugField(populate_from='title', unique=True)
+    
     author = models.ForeignKey(User,
                                 on_delete=models.CASCADE,
                                 related_name='blog_posts')
@@ -94,10 +102,10 @@ class Blog(models.Model):
     def __str__(self):
         return self.title
     
-    def get_absolute_url(self):
-        return reverse('private_blog:post_detail',
-                       args=[self.publish.year,
-                            self.publish.month,
-                            self.publish.day,
-                            self.slug])
+    # def get_absolute_url(self):
+    #    return reverse('private_blog:post_detail',
+    #                   args=[self.publish.year,
+    #                        self.publish.month,
+    #                        self.publish.day,
+    #                        self.slug])
     
