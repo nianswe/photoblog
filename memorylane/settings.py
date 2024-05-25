@@ -17,6 +17,9 @@ import dj_database_url
 if os.path.isfile('env.py'):
     import env
 
+#Date format YYYY-MM-DD
+DATE_FORMAT = '%y-%m-%d'
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 

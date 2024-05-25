@@ -5,20 +5,21 @@
     <div class="row">
         <!-- Blog Entries Column -->
         <div class="col-12 mt-3 left">
-            <div class="row">
+            <div class="row bloglist">
                 {% for blog in blogs %}
-                    <div class="col-md-4">
-                        <div class="card mb-4">
+                    <div class="col-md-6">
+                        <div class="card mb-6">
                             <div class="card-body">
                                 <div class="image-container">
                                     <img src="{{ blog.photo.image.url }}" alt="{{ blog.title }}">
                                 </div>
                                 <a href="{% url 'view_blog' blog.id %}">
                                     <h3 class="card-title">{{ blog.title }}</h3>
-                                </a>
-                                <hr>
-                                <p class="card-text text-muted h6">{{ blog.date_created}}
-                                </p>
+                                    <p class="card-text text-muted h6">Author: {{ blog.author }}</p>
+                                    <p class="card-text text-muted h6">Published: {{ blog.publish |date:"d M Y" }} </p>
+                                    </a>
+                                    <hr>
+                                    <p class="card-text text-muted h6">{{ blog.date_created}}
                             </div>
                         </div>
                     </div>
