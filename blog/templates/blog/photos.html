@@ -1,16 +1,28 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
-    <h2>Photos</h2>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="about">
+<div class="container-fluid">
+    <div class="row">
+        <!-- Photo Entries Column -->
+        <div class="col-12 mt-3 center">
+            <div class="row photopost">
                 {% for photo in photos %}
-                        <img src="{{ photo.image.url }}">
-                        <p>{{ photo.caption }}</p>
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <div class="image-container">
+                                    <img src="{{ photo.image.url }}">
+                                    <p class="card-text text-muted h5">"{{ photo.caption }}"</p>
+                                    <p class="card-text text-muted h6">Publisher: {{ photo.uploader }}</p>
+                                    <p class="card-text text-muted h6">Date uploaded: {{ photo.date_created }}</p>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
                 {% endfor %}
             </div>
         </div>
     </div>
-        
-    
+</div>            
 {% endblock content %}
+

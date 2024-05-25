@@ -1,22 +1,29 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
 <div class="container-fluid">
     <div class="row">
-        <div class="about">
-            <div class="row">
-                <h2>{{ blog.title }}</h2>
-                
-                {% if request.user == blog.author %}
-                    <p><a href="{% url 'edit_blog' blog.id %}">Edit Blog</a></p>
-                {% endif %}
-                <img src="{{ blog.photo.image.url }}">
-                <p>{{ blog.photo.caption }}</p>
-                <p>{{ blog.content }}</p>
+        <!-- Photo Entries Column -->
+        <div class="col-12 mt-3 center">
+            <div class="row blogpost">
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h2>{{ blog.title }}</h2>
+                            {% if request.user == blog.author %}
+                                <p><a href="{% url 'edit_blog' blog.id %}">Edit Blog</a></p>
+                            {% endif %}
+                            <img src="{{ blog.photo.image.url }}">
+                            <p class="card-text text-muted h5">"{{ blog.photo.caption }}"</p>
+                            <p class="card-text text-muted h6">Author: {{ blog.author }}</p>
+                            <p class="card-text text-muted h6">Published: {{ blog.publish }}</p>
+                            <p>{{ blog.body }}</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div> 
-         
+</div>            
 {% endblock content %}
-
 
