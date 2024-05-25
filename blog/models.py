@@ -36,6 +36,10 @@ class Photo(models.Model):
     status = models.CharField(max_length=2, choices=Status.choices, default=Status.PUBLISHED)
     pubstatus = models.CharField(max_length=2, choices=PubStatus.choices, default=PubStatus.PRIVATE)
     
+    def __str__(self):
+        return self.caption
+    
+    
     # IMAGE_MAX_SIZE = (800, 800)
 
     # def resize_image(self):
