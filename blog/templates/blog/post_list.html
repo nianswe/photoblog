@@ -7,8 +7,8 @@
         <div class="col-12 mt-3 left">
             <div class="row bloglist">
                 {% for blog in blogs %}
-                    <div class="col-md-6">
-                        <div class="card mb-6">
+                    <div class="col-md-3">
+                        <div class="card mb-3">
                             <div class="card-body">
                                 <div class="image-container">
                                     <img src="{{ blog.photo.image.url }}" alt="{{ blog.title }}">
@@ -19,7 +19,7 @@
                                     <p class="card-text text-muted h6">Published: {{ blog.publish |date:"d M Y" }} </p>
                                     </a>
                                     <hr>
-                                    <p class="card-text text-muted h6">{{ blog.date_created}}
+                                    <p class="card-text text-muted h6">{{ blog.date_created |date:"d M Y" }}
                             </div>
                         </div>
                     </div>

@@ -19,6 +19,11 @@ if os.path.isfile('env.py'):
 
 #Date format YYYY-MM-DD
 DATE_FORMAT = '%y-%m-%d'
+LANGUAGE_CODE = 'en-us'
+TIME_ZONE = 'UTC'
+USE_I18N = True
+USE_L10N = True
+USE_TZ = True
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent

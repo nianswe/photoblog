@@ -14,6 +14,11 @@ class PublishedManager(models.Manager):
     def get_queryset(self):
         return super().get_queryset()\
                     .filter(status=Blog.Status.PUBLISHED)
+                    
+class PhotoPublishedManager(models.Manager):
+    def get_queryset(self):
+        return super().get_queryset()\
+                    .filter(status=Photo.PubStatus.SHARED)
 
 class Photo(models.Model):
     
@@ -30,11 +35,13 @@ class Photo(models.Model):
     image = CloudinaryField('image', default='placeholder')
     slug = AutoSlugField(populate_from='image', unique=True, null=True)
     id = models.AutoField(primary_key=True)
-    caption = models.CharField(max_length=128, null=False, blank=False)
+    caption = models.CharField(max_length=128, null=True, blank=True)
     uploader = models.ForeignKey(User, on_delete=models.CASCADE)
     date_created = models.DateTimeField(auto_now_add=True)
     status = models.CharField(max_length=2, choices=Status.choices, default=Status.PUBLISHED)
     pubstatus = models.CharField(max_length=2, choices=PubStatus.choices, default=PubStatus.PRIVATE)
+    objects = models.Manager() # The default manager.
+    published = PhotoPublishedManager() # Our custom manager.
     
     def __str__(self):
         return self.caption

@@ -13,7 +13,6 @@ urlpatterns = [
     path('<int:blog_id>/edit', blog.views.edit_blog, name='edit_blog'),
     path('upload/', blog.views.blog_and_photo_upload, name='blog_and_photo_upload'),
     path('photo/', blog.views.photos, name='photos'),
-    path('photo/list/', blog.views.list_photos, name='list_photo'),
     path('photo/upload/', blog.views.photo_upload, name='photo_upload'),
     path('photo/upload-multiple/', blog.views.create_multiple_photos, name='create_multiple_photos'),
     

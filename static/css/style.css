@@ -26,6 +26,7 @@
 .photos img {
     width: auto;
     height: 300px;
+    margin:0 0;
     border-radius: 10px;
     border: 0.1px solid rgba(252, 253, 252, 0.1);
     /* line-height: 3em; */
@@ -34,14 +35,24 @@
 .image-container img {
     width: auto;
     height: 400px;
+    margin:0 0;
     border-radius: 10px;
     border: 0.1px solid rgba(252, 253, 252, 0.1);
     /* line-height: 3em; */
 }
 
+
+.blogpost {
+    width: auto;
+    height: 100%;
+    margin:0 0;
+    
+}
+
 .blogpost img {
     width: 100%;
     height: 100%;
+    margin:0 0;
     border-radius: 10px;
     border: 0.1px solid rgba(252, 253, 252, 0.1);
     /* line-height: 3em; */
@@ -50,6 +61,7 @@
 .bloglist img {
     width: 100%;
     height: 100%;
+    margin:0 0;
     border-radius: 10px;
     border: 0.1px solid rgba(252, 253, 252, 0.1);
     /* line-height: 3em; */
@@ -57,7 +69,8 @@
 
 .photopost img {
     width: 100%;
-    height: 100%;
+    height: auto;
+    margin:0 0;
     border-radius: 10px;
     border: 0.1px solid rgba(252, 253, 252, 0.1);
     /* line-height: 3em; */
@@ -65,8 +78,8 @@
 
 /* Footer */
 footer {
-    footer 
-    flex-shrink: 0;
+     
+    
     background-color: rgba(252, 253, 252, 0.5);
     position: relative;
     width: 100%;
@@ -110,4 +123,13 @@ footer {
     margin-top: 1px;
     padding: 3px 0;
     color: black;
+}
+
+/* Media query: large or landscape phones (400px and up) */
+@media screen and (max-width: 390px) {
+
+    .photos img {
+        width: 360px;
+        
+    }
 }

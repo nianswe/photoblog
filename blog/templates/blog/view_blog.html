@@ -16,7 +16,7 @@
                             <img src="{{ blog.photo.image.url }}">
                             <p class="card-text text-muted h5">"{{ blog.photo.caption }}"</p>
                             <p class="card-text text-muted h6">Author: {{ blog.author }}</p>
-                            <p class="card-text text-muted h6">Published: {{ blog.publish }}</p>
+                            <p class="card-text text-muted h6">Published: {{ blog.publish |date:"d M Y" }}</p>
                             <p>{{ blog.body }}</p>
                         </div>
                     </div>

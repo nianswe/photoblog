@@ -5,8 +5,8 @@
         <div class="col-6 mt-3 right">
             <div class="row">    
                 <h3>Delete Photo?</h3>
-                <form method="post">
-                    {{ edit_photo_form.as_p }}
+                <form method="post" enctype="multipart/form-data">
+                    {{ delete_form }}
                     {% csrf_token %}
                     <button type="submit" >Delete</button>
                 </form>
