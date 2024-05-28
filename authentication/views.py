@@ -1,10 +1,10 @@
-# authentication/views.py
 from django.conf import settings
 from django.shortcuts import redirect, render
 from django.contrib.auth import login, authenticate, logout
 from . import forms
 from django.views.generic import View
 
+# Login Form View - Credit and insperation: https://openclassrooms.com/en/courses/7107341-intermediate-django/7263527-create-a-login-page-with-class-based-views
 class LoginPageView(View):
     template_name = 'authentication/login.html'
     form_class = forms.LoginForm
@@ -26,14 +26,14 @@ class LoginPageView(View):
                 return redirect('post_list')
         message = 'Login failed!'
         return render(request, self.template_name, context={'form': form, 'message': message})
-
-   
+  
     
 def logout_user(request):
     logout(request)
     return redirect('login')
 
 
+# Sign up Form View - Credit and insperation: https://openclassrooms.com/en/courses/7107341-intermediate-django/7263818-create-a-sign-up-page
 def signup_page(request):
     form = forms.SignupForm()
     if request.method == 'POST':
