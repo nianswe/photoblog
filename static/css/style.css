@@ -125,6 +125,11 @@ footer {
     color: black;
 }
 
+/* Mark active page on menu item with underline */
+.active {
+    border-bottom: 2px solid black;
+}
+
 /* Media query: large or landscape phones (400px and up) */
 @media screen and (max-width: 390px) {
 
