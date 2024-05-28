@@ -3,13 +3,13 @@
 {% block content %}
 <div class="container-fluid">
     <div class="row">
-        <div id="gallery">
+        <section id="gallery">
             <div class="photos">
                 {% for photo in photos %}
-                    <img src="{{ photo.image.url }}" alt="{{ photo.caption }}">
+                    <img src="{{ photo.image.url }}">
                 {% endfor %}
             </div>
-        </div>
+        </section>
     </div>
 </div>
 
