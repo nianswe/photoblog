@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h5>Register your personal login...</h5>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="about">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-3 mt-3 right">
+            <div class="row postbody">    
+                <h5>Register your personal login...</h5>  
                 <h2>Sign Up</h2>
                 {% if form.errors %}
                 {{ form.errors }}
@@ -16,5 +17,5 @@
             </div>
         </div>
     </div>
-    
+<div>    
 {% endblock content %}

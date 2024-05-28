@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h5>Welcome, Please Login...</h5>
     <div class="container-fluid">
         <div class="row">
-            <div class="form">
-                <div class="row">
+            <div class="col-3 mt-3 right">
+                <div class="row postbody">    
+                    <h5>Welcome, Please Login...</h5>
                     <p>{{ message }}</p>
                     <form method="post">
                         {{ form.as_p }}
