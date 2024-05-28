@@ -92,31 +92,6 @@ footer {
     align-content: center;
 }
 
-/* Follow us text */
-#followus {
-    text-align: center;
-    font-size: 100%;
-    padding: 1vw 0;
-    color: whitesmoke;
-}
-
-/* Social media */
-#social-media {
-    text-align: center;
-    justify-content: space-between;
-    padding: 3px 0;
-    display: flex;
-    list-style-type: none;
-    max-width: 20vw;
-    
-}
-
-#social-media i {
-    font-size: 170%;
-    padding: 3px 0;
-    color: black;
-}
-
 /* Copyright information */
 #copyrights {
     text-align: center;
@@ -139,7 +114,7 @@ footer {
   }
 
 .postbody {
-    border: 0.1px solid grey;
+    border: 0.1px solid whitesmoke;
     border-radius: 5px;
     background-color: whitesmoke;
     min-height: 100px;
@@ -161,10 +136,11 @@ a:active {
 
 
 /* Media query: small phones (400px and down) */
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 500px) {
 
     .photos img {
         max-width: 360px;
+        height: auto;
         
     }
 }

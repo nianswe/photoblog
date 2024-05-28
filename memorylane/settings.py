@@ -17,7 +17,7 @@ import dj_database_url
 if os.path.isfile('env.py'):
     import env
 
-#Date format YYYY-MM-DD
+# Date format YYYY-MM-DD
 DATE_FORMAT = '%y-%m-%d'
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
@@ -33,7 +33,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = 'django-insecure-ge(6xrr7iqv8er(a)2jx-hn4+)33+8^_i(-_pbx6kq9##pj5*r'
 
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
@@ -124,20 +123,23 @@ LOGIN_REDIRECT_URL = 'blog'
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-        
+        'NAME': 'django.contrib.auth.password_validation. \
+            UserAttributeSimilarityValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME': 'django.contrib.auth.password_validation. \
+            MinimumLengthValidator',
         'OPTIONS': {
            'min_length': 8,
         }
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation. \
+            CommonPasswordValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation. \
+            NumericPasswordValidator',
     },
 ]
 

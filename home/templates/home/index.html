@@ -4,7 +4,7 @@
 <div class="container-fluid">
     <div class="row">
         <div id="gallery">
-            <div class="photos">
+            <div class="photos postbody">
                 {% for photo in photos %}
                     <img src="{{ photo.image.url }}" alt="{{ photo.caption }}">
                 {% endfor %}

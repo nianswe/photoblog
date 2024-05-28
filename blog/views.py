@@ -3,25 +3,25 @@ from django.http import HttpResponse
 from django.views import generic
 from .models import Blog
 from . import forms, models
-from django.views.generic import ListView 
+from django.views.generic import ListView
 from django.contrib.auth.decorators import login_required
 from django.forms import formset_factory
 from django.contrib.auth.models import User
-
-
-# Create your views here.
 
 
 @login_required
 def blog(request):
     photos = models.Photo.objects.all()
     blogs = models.Blog.objects.all()
-    return render(request, 'blog/post_list.html', context={'photos': photos, 'blogs': blogs})
+    return render(request, 'blog/post_list.html',
+                  context={'photos': photos, 'blogs': blogs})
+
 
 @login_required
 def photos(request):
     photos = models.Photo.objects.all()
     return render(request, 'blog/photos.html', context={'photos': photos})
+
 
 @login_required
 def view_blog(request, blog_id):
@@ -32,7 +32,7 @@ def view_blog(request, blog_id):
 @login_required
 def photo_upload(request):
     form = forms.PhotoForm()
-    if request.method == 'POST': 
+    if request.method == 'POST':
         form = forms.PhotoForm(request.POST, request.FILES)
         if form.is_valid():
             photo = form.save(commit=False)
@@ -57,9 +57,12 @@ def create_multiple_photos(request):
                     photo.uploader = request.user
                     photo.save()
             return redirect('home')
-    return render(request, 'blog/create_multiple_photos.html', {'formset': formset})   
+    return render(request,
+                  'blog/create_multiple_photos.html',
+                  {'formset': formset})
 
-@login_required   
+
+@login_required
 def blog_and_photo_upload(request):
     blog_form = forms.BlogForm()
     photo_form = forms.PhotoForm()
@@ -82,29 +85,27 @@ def blog_and_photo_upload(request):
     return render(request, 'blog/add_blog_post.html', context=context)
 
 
-
 @login_required
 def view_blog(request, blog_id):
     blog = get_object_or_404(models.Blog, id=blog_id)
     return render(request, 'blog/view_blog.html', {'blog': blog})
 
 
- 
-@login_required 
+@login_required
 def edit_blog(request, blog_id):
     blog = get_object_or_404(models.Blog, id=blog_id)
     edit_form = forms.BlogForm(instance=blog)
     delete_form = forms.DeleteBlogForm()
-    
+
     if request.user == blog.author:
         if request.method == 'POST':
-            
+
             if 'edit_blog' in request.POST:
                 edit_form = forms.BlogForm(request.POST, instance=blog)
                 if edit_form.is_valid():
                     edit_form.save()
                     return redirect('home')
-            
+
             if 'delete_blog' in request.POST:
                 delete_form = forms.DeleteBlogForm(request.POST)
                 if delete_form.is_valid():
@@ -114,8 +115,10 @@ def edit_blog(request, blog_id):
             'edit_form': edit_form,
             'delete_form': delete_form,
         }
-        return render(request, 'blog/edit_blog.html', context=context)
-    return HttpResponse('The logged-in user is not the author of this blog post.')
+        return render(request,
+                      'blog/edit_blog.html',
+                      context=context)
+
 
 class PostList(ListView):
     """
@@ -125,6 +128,3 @@ class PostList(ListView):
     context_object_name = 'posts'
     paginate_by = 3
     template_name = 'blog/post_list.html'
-    
-
-

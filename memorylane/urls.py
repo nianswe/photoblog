@@ -28,7 +28,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("blog/", include("blog.urls"), name="blog-urls"),
     path("auth/", include("authentication.urls"), name="authentication-urls"),
-    
 ]
 
 if settings.DEBUG:
