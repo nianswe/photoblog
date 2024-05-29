@@ -12,14 +12,14 @@ from django.contrib.auth.models import User
 @login_required
 def blog(request):
     photos = models.Photo.objects.all()
-    blogs = models.Blog.objects.all()
+    blogs = models.Blog.objects.order_by('-publish')
     return render(request, 'blog/post_list.html',
                   context={'photos': photos, 'blogs': blogs})
 
 
 @login_required
 def photos(request):
-    photos = models.Photo.objects.all()
+    photos = models.Photo.objects.order_by('-date_created')
     return render(request, 'blog/photos.html', context={'photos': photos})
 
 
