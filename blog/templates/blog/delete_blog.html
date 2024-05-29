@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-3 mt-3 right">
+            <div class="row postbody">    
+                <h3>Delete Blog?</h3>
+                <p> Are you sure you want to delete your blog post? This action cannot be undone. </p>
+                <form method="post">
+                    {{ delete_form }}
+                    {% csrf_token %}
+                    
+                    <button type="button" class="btn btn-primary" onclick="window.history.back();">Cancel</button>
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+    
+</div> 
+{% endblock content %}

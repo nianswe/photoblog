@@ -49,21 +49,21 @@ class Photo(models.Model):
     def __str__(self):
         return self.caption
 
-    IMAGE_MAX_SIZE = (800, 800)
+    # IMAGE_MAX_SIZE = (800, 800)
 
-    def resize_image(self):
-        image = Image.open(self.image)
-        image.thumbnail(self.IMAGE_MAX_SIZE)
-        # save the resized image to the file system
-        # this is not the model save method!
-        image.save(self.image.path)
+    # def resize_image(self):
+    #    image = Image.open(self.image)
+    #    image.thumbnail(self.IMAGE_MAX_SIZE)
+    #    # save the resized image to the file system
+    #    # this is not the model save method!
+    #    image.save(self.image.path)
 
-    def save(self, *args, **kwargs):
-        super().save(*args, **kwargs)
-        self.resize_image()
+    # def save(self, *args, **kwargs):
+    #     super().save(*args, **kwargs)
+    #    self.resize_image()
 
-    def __str__(self):
-        return self.caption + ' (' + self.pubstatus + ')'
+    # def __str__(self):
+    #     return self.caption + ' (' + self.pubstatus + ')'
 
 
 class Blog(models.Model):
