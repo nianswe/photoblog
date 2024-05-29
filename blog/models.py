@@ -77,7 +77,6 @@ class Blog(models.Model):
         SHARED = 'SH', 'Shared'
 
     title = models.CharField(max_length=250)
-    # slug = models.SlugField(max_length=250, unique_for_date='publish')
     slug = AutoSlugField(populate_from='title', unique=True, null=True)
     author = models.ForeignKey(User,
                                on_delete=models.CASCADE,
