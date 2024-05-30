@@ -356,18 +356,6 @@ The website CSS style has successfully passed the W3C Jigsaw CSS Validation Serv
 ### Python Validation (PEP8)
 All Python code was manually checked using CI Python Linter. The Linter reports had messages about exceeding the string length of 79 characters, which have been fixed. Re-testing did not reveal any errors.
 
-* urls.py
-![urs.py](./static/assets/images/validations/urls-linter.png)
-* urls.py for signup
-![urs.py](./static/assets/images/validations/linter-urls-signup.png)
-* models.py
-![models.py](./static/assets/images/validations/linter-models.png)
-* forms.py
-![forms.py](./static/assets/images/validations/linter-forms.png)
-* views.py
-![views.py](./static/assets/images/validations/linter-views.png)
-* admin.py
-![admin.py](./static/assets/images/validations/linter-admin.png)
 
 During testing a few issues were identified and corrected:
 
@@ -379,7 +367,7 @@ During testing a few issues were identified and corrected:
 
 ### Lighthouse
 
-![Lighthouse](./static/assets/images/validations/lighthouse-example.png)
+![Lighthouse](./static/assets/images/)
 
 
 # Deployment
