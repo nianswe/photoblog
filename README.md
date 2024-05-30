@@ -47,7 +47,7 @@
 
 # PROJECT GOALS
 This is a project under the Code Institute Full Stack Developer Diploma Program.
-This website is photo blog called Memory Lane, where you can in a private view save and publish your memories and photos, also publish the photos on the public site.
+This website is a photo blog called Memory Lane, where you can in a private view save and publish your memories and photos, also publish the photos on the public site.
 
 # Fundamentals
 
