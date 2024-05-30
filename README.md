@@ -67,8 +67,8 @@ User stories
 * Home page with view of all Published photos
 * Create Blog post with upload image as authenticated user
 * View Blogposts in list as authenticated user
-* View specific Blogpost as authenticated user
-* Edit specific Blogpost from View specific Blogpost as authenticated user
+* View specific Blog post as authenticated user
+* Edit specific Blog post from View specific Blogpost as authenticated user
 * Register User Account
 * Log in as a User.
 * Setup external storage for images/photos in Cloudinary
@@ -140,7 +140,7 @@ The navigation bar is an adaptive element, and on mobile screens it collapses in
 
 ![nav bar mobile](./static/assets/images/menu_mobile_unaut.jpg)
 
-### Navigation for an authorized user - registration disappears:
+### Navigation for an authorized user:
 
 ![nav bar when registered](./static/assets/images/menu.jpg)
 
