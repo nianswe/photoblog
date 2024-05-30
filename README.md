@@ -356,10 +356,6 @@ The site was constantly tested during the process of creating the site in the Gi
 | I can edit a particular blog post.  |   | X | You can see the edited blog post in the Blog Page |  |
 | I can delete a particular blog post |   | X | You will get a confirm deletion message at confirm delete page with possibility to abort |
 
-| Bug| Solution | 
-| ------- | ------- |  
-| 
-
 
 ## Validation
 
