@@ -1,10 +1,10 @@
-# photoblog# PROJECT PORTFOLIO FOUR - MEMORY LANE - PHOTO BLOG
+# PROJECT PORTFOLIO FOUR - MEMORY LANE - PHOTO BLOG
 
 ![responsive](./static/assets/images/validations/iamresponsive.png)
 
-The deployed app [Heroku](https://crossfit-signup-4bbbc5fa58ea.herokuapp.com/) 
+The deployed app [Heroku](https://photoblog-nianswe-1c8d81b27564.herokuapp.com/) 
 
-[Github Repository](https://github.com/Jaimilit/CrossFit-Signup) 
+[Github Repository](https://github.com/nianswe/photoblog) 
 
 # Table of Contents
 
@@ -44,10 +44,10 @@ The deployed app [Heroku](https://crossfit-signup-4bbbc5fa58ea.herokuapp.com/)
     - [Inspiration](#inspiration)
 
 # PROJECT GOALS
-This is a project under the Code Institute Diploma in Software Development Program.
-This website is photo bleg called Memory Lane, wher you can in a private wiew save and publish your memorys and photos, also publish the photos on the public site.
+This is a project under the Code Institute Full Stack Developer Diploma Program.
+This website is photo blog called Memory Lane, where you can in a private view save and publish your memorys and photos, also publish the photos on the public site.
 
-# UX
+# Fundamentals
 
 User stories
 
@@ -57,6 +57,10 @@ User stories
 * Prepare for deploy to Heroku
 * Publish website on Heroku.
 * Setup User Authentication in Django, with Register user, Login, Logout
+
+# UX
+
+User stories
 * Setup Image Upload
 * Home page with view of all Published photos
 * Create Blog post with upload image as authenticated user
@@ -106,19 +110,22 @@ Upload Multiple Photos: The page is only available to authenticated users. This 
 
 # Wireframes
 
-Wireframes were used to create the basic layout of the project. The wireframes pages can be seen below:
+Wireframes where used to create the basic layout of the project. The wireframes pages can be seen below:
 
-Homepage:
-![wireframes-homepage](./static/assets/images/wireframes/wireframes-homepage.png)
+### Homepage:
 
-Booking Page:
-![wireframes-bookingpage](./static/assets/images/wireframes/wireframes-bookingpage.png)
+![wireframes-homepage_loggedin](./static/assets/images/home_logged_in_wf.png)
 
-Booking Successful/Delete Booking/Booking Already Made/Edit Booking:
-![wireframes-homepage]
+![wireframes-homepage](./static/assets/images/home_wf.png)
 
-Models for creating bookings:
-![wireframes-models](./static/assets/images/wireframes/models.png)
+### Blog Page:
+
+![wireframes-blogpage](./static/assets/images/blog_wf.png)!
+
+### Photos Page:
+
+![wireframes-photospage](./static/assets/images/photos_wf.png)
+![wireframes-blogpage_mobile](./static/assets/images/mobile_wf.png)
 
 # FEATURES
 
@@ -128,57 +135,115 @@ The navigation bar is present on all pages of the site. As a non authenticated u
 As a authenticated user Home, Blog, View Photos, Upload Photo, Upload Multiple Photos, Logout.
 The navigation bar is an adaptive element, and on mobile screens it collapses into a hamburger icon.
 
-Navigation for an unauthorized user:
-![nav bar]({% static '/assets/images/menu_unauth.jpg %})
-![nav bar mobile]({% static '/assets/images/menu_mobile_unauth.jpg %})
+### Navigation for an unauthorized user:
 
-Navigation for an authorized user - registration disappears:
-![nav bar when registered] ({% static '/assets/images/menu.jpg %})
-![nav bar when registered mobile]({% static '/assets/images/menu_mobile.jpg %})
+![nav bar](./static/assets/images/menu_unaut.jpg)
+
+![nav bar mobile](./static/assets/images/menu_mobile_unaut.jpg)
+
+### Navigation for an authorized user - registration disappears:
+
+![nav bar when registered](./static/assets/images/menu.jpg)
+
+![nav bar when registered mobile](./static/assets/images/menu_mobile.jpg)
 
 
 ## Pages
 
-Registration Page - Where a user can sign up to create a user:
-![Signup]({% static '/assets/images/signup.jpg %})
+### Registration Page - Where a user can sign up to create a user:
 
-Login Page - Where a registred user can log-in:
-![Login]({% static '/assets/images/login.jpg %})
+![Signup](./static/assets/images/signup.jpg)
 
-Home Page - Where a user can see collection of photos with status PUBLISH and pubstatus(pubish status) SHARED 
-![Home page](./static/assets/images/features/home.jpg)
 
-Blog Page - Where an authenicated user can view the blog posts and attached images/photos: 
-![Blog](./static/assets/images/features/home.jpg)
+### Login Page - Where a registred user can log-in:
 
-Upload Image - Where an authenticated user can upload singel image/photo. 
-![upload image](./static/assets/images/features/upload_image.jpg)
+![Login](./static/assets/images/login.jpg)
 
-Upload Multiple Image - Where an authenticated user can upload multiple images/photos. 
-![upload multiple images](./static/assets/images/features/upload_image.jpg)
 
-Add Post - Where an authenticated user can create a blog posts.
-![add post](./static/assets/images/features/add_post.jpg)
+### Home Page - Where a guest or logged in user can see collection of photos with status PUBLISH and pubstatus(publish status) SHARED:
 
-View Blog Post - Where an authenticated user can View a blog posts and if auther af the post click Edit Blog to edit.
-![view post](./static/assets/images/features/view_post.jpg)
+![Home page](./static/assets/images/home.jpg)
 
-Edit and Delete Blog Post - Where an authenticated user can edit or delete a blog posts.
+
+### Blog Page - Where an logged in user can view the blog posts and attached images/photos:
+
+![Blog](./static/assets/images/blog.jpg)
+
+
+### Photo Page - Where an logged in user can view all images and information about them, like bubilsher and publish date:
+
+![Photos](./static/assets/images/photos.jpg)
+
+
+### Upload Image - Where an logged in user can upload a singel image/photo:
+
+![upload image](./static/assets/images/upload_image.jpg)
+
+
+### Upload Multiple Image - Where an logged in user can upload multiple images/photos:
+
+![upload multiple images](./static/assets/images/upload_multi_image.jpg)
+
+
+### Add Post - Where an logged in user can create a blog posts.
+
+![add post](./static/assets/images/add_post.jpg)
+
+
+### View Blog Post - Where an logged in user can view a blog posts and if auther af the post click Edit Blog to edit:
+
+![view post](./static/assets/images/view_blog_post.jpg)
+
+
+### Edit and Delete Blog Post - Where an logged in user can edit or delete a blog posts.
 Change title, change body, change photo to another already uploaded photo, change status to Draft if Published and Published if Draft.
-Delete Blog Post.
-![edit post](./static/assets/images/features/edit_post.jpg)
+Delete Blog Post:
 
-Footer - Information that it was created by me with copyright, no links.
+![edit post](./static/assets/images/edit_blog_post.jpg)
 
 
-Main Admin Page - Main Admin page to create workouts and view bookings made:
-![admin-page](./static/assets/images/features/admin-page.png)
+### Delete confirmation - Confirmation when a user delete a blog posts.
+Confirmation view when a user choose to delete a blogpost, with possibillity to abort.
 
-Admin Workout - Where Admin created the workout sessions to be booked by users:
-![admin-workouts](./static/assets/images/features/admin-workouts.png)
+![confirm delete](./static/assets/images/delete_confirm.jpg)
 
-Admin Bookings - Where Admin can view the bookings made and deleted:
-![admin-bookings](./static/assets/images/features/admin-bookings.png)
+
+### Footer 
+Footer only include information about Copyright without links.
+
+
+### Main Admin Page - Main Admin page to overview blogs and photos:
+
+![admin-page](./static/assets/images/admin.jpg)
+
+
+### Admin Blog - Where Admin can view blog posts and choose to edit or delete:
+
+![admin-blog](./static/assets/images/admin_blogs.jpg)
+
+### Admin Photos - Where Admin can view all uplodad images.
+
+![admin-photos](./static/assets/images/admin_photos.jpg)
+
+
+### Admin Blog Add- Where Admin can add a blogposts:
+
+![admin-blog-add](./static/assets/images/admin_blogs_add.jpg)
+
+
+### Admin Photos Add - Where Admin can upload and comment new images.
+
+![admin-photos-add](./static/assets/images/admin_photos_add.jpg)
+
+
+### Admin Blog Edit- Where Admin can view blogposts edit information, status or delete a blog post:
+
+![admin-blog-edit](./static/assets/images/admin_blog_edit.jpg)
+
+
+### Admin Photos Edit - Where Admin can edit information or delete images.
+
+![admin-photo-edit](./static/assets/images/admin_photos_edit.jpg)
 
 # Responsive Design
 
@@ -187,9 +252,15 @@ The site has been designed to be responsive and adapted for use on both desktop 
 
 # Future Features
 
-* Page with information about the instructors
-* Create a user profile which the user can view 
-* A list where users can view all their previous bookings/attendance for classes
+* Public blog page for guests and non authenticated visitors, content published based on status SHARED on blog posts, witch is not activ now.
+* Comment function on blog posts and on specific images/photos, where logged in users can comment and give feedback.
+* Create a user profile where the logged in user can view and edit own posts.
+* Add Crispy-forms to make it possible to write more stilish blog posts.
+* Event function where users can group blogposts and images together and publish in own views of the event and add description about the event.
+* Add geotag function with GPS coordinate information and pin location of location on a map on the photo view page.
+* Change password and Reset password via email function.
+* Improve Photo view  
+
 
 # Technology Used:
 
@@ -215,11 +286,10 @@ The site has been designed to be responsive and adapted for use on both desktop 
 * [Font Awesome](https://fontawesome.com/): Was used to create the icons used on the website
 * [Gitpod](https://gitpod.io/workspaces): Gitpod was used as IDE to commit and push the project to GitHub.
 * [GitHub](https://github.com/): Was used to store my code
-* [Am I Responsive](https://ui.dev/amiresponsive): To generate an image showcasing the website's responsiveness to different screen sizes
 * [Pip3](https://pypi.org/project/pip/): To install Python modules and libraries
 * [Gunicorn](https://docs.djangoproject.com/en/4.1/howto/deployment/wsgi/gunicorn/): "Green Unicorn" is a Python Web Server Gateway to translate HTTP Requests for Python to understand
 * [Spycopg2](https://pypi.org/project/psycopg2/): PostgreSQL database adapter so I can manage the Database in Python
-* [Cloudinary](https://cloudinary.com/): The image hosting service used to upload images and other media
+* [Cloudinary](https://cloudinary.com/): The image hosting service used to upload images and other media.
 * [Heroku](https://dashboard.heroku.com/apps): The hosting service used to host the website
 * [VSCode](https://code.visualstudio.com/): The IDE used to develop the website
 * [Chrome Developer Tools](https://developer.chrome.com/docs/devtools/open/): Was used to debug the website
@@ -254,17 +324,19 @@ The site was constantly tested during the process of creating the site in the Gi
 
 | Goals and Actions | As a Guest | As a User | Comment |
 | -------- | -------- |  -------- | -------- |
-| I can use the menu and navigate through the pages   | X | X | Click on items
-| I can see the Home Page   | X | X | Click on items
-| I can see the Registration Page  | X |  | Click on items and this disappears from the nav bar once registered
-| I can see the Blog Page |   | X | Need to be authorized to see
-| I can see the Sign Up Page | X |  | Click on items
-| I can see the Login/Logout Pages | X | X | You see one or the other depending on if you are logged in or logged out
-| I can complete the Registration form  | X |  | Click on items
-| I can upload image |  | X | Need to be authorized to do
-| I can upload multiple images |  | X | Need to be authorized to do
-| I can edit a particular blog post |   | X | Need to be authorized to do
-| I can delete a particular blog post |   | X | Need to be authorized to do
+| # Non Authenticated users # |  |  |  |
+| I can see the Home, Register and Login on menu when a user is not authenticated   | X |  |  |
+| I can see the Register/Sign up Page. | X |  | You can complete user a registration after ckicking the Register menue item an an non authenticated user |
+| I can see the Login Page | X |  | You can complete a user login with a valid registred user account.
+| I can see the Home Page and all published images  | X | X |  |
+| # Authenticated users # |  |  |  |
+| I can see the Home, Add Post, View Photos, Upload Photo, Upload Multiple Photos and Logout on menu when a user is authenticated   |  | X |  |
+| I can see the Home Page and all published images  | X | X |  |
+| I can see the Blog Page  |   | X |   |You can click on a blog post, see information and the Edit post button if I you ar the author of the post |
+| I can upload single image  |  | X | You can view the image on the Photo View and if pubstatus:SHARED on the Home page  |
+| I can upload multiple images  |  | X | You can view images on the Photo View and if pubstatus:SHARED on the Home page |
+| I can edit a particular blog post.  |   | X | You can see the edited blog post in the Blog Page |  |
+| I can delete a particular blog post |   | X | You will get a confirm deletion message at confirm delete page with possibillity to abort |
 
 | Bug| Solution | 
 | ------- | ------- |  
@@ -276,8 +348,6 @@ The site was constantly tested during the process of creating the site in the Gi
 ### HTML Validation:
 The W3C Markup Validation Service was used to validate the HTML of the website. There were errors and warnings in the reports about unclosed elements and tags, incorrect values ​​and types of elements, and unnecessary trailing slashes. All errors and warnings have been fixed, the project's HTML code has been re-checked without significant errors.
 
-It shows one error here and I have fixed it, but it still shows.
-![HTMl Validation](./static/assets/images/validations/html.png)
 
 ### CSS Validation:
 The website CSS style has successfully passed the W3C Jigsaw CSS Validation Service.
