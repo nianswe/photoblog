@@ -269,6 +269,7 @@ The navigation bar is an adaptive element, and on mobile screens it collapses in
 
 # Future Features
 
+* Increase performance on home page with thumbnail images instead of uploaded high resolution images
 * Public blog page for guests and non authenticated visitors, content published based on status SHARED on blog posts, which is not active now.
 * Comment function on blog posts and on specific images/photos, where logged in users can comment and give feedback.
 * Create a user profile where the logged in user can view and edit own posts.
@@ -365,10 +366,8 @@ The site was constantly tested during the process of creating the site in the Gi
 ### HTML Validation:
 The W3C Markup Validation Service was used to validate the HTML of the website. There were errors and warnings in the reports about unclosed elements and tags, incorrect values ​​and types of elements, and unnecessary trailing slashes. All errors and warnings have been fixed, the project's HTML code has been re-checked without significant errors.
 
-
 ### CSS Validation:
 The website CSS style has successfully passed the W3C Jigsaw CSS Validation Service.
-![CSS](./static/assets/images/validations/css-validation.png)
 
 ### Python Validation (PEP8)
 All Python code was manually checked using CI Python Linter. The Linter reports had messages about exceeding the string length of 79 characters, which have been fixed. Re-testing did not reveal any errors.
@@ -383,8 +382,9 @@ During testing a few issues were identified and corrected:
 * Minor errors with missing closing tags
 
 ### Lighthouse
+Due to the fact that images on the website are published in full resolution instead of low-resolution thumbnails, the performance of loading the website is not good.
 
-![Lighthouse](./static/assets/images/)
+![Lighthouse](./static/assets/images/lighthouse.jpg)
 
 
 # Deployment
