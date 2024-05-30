@@ -9,6 +9,7 @@ The deployed app [Heroku](https://photoblog-nianswe-1c8d81b27564.herokuapp.com/)
 # Table of Contents
 
 - [Project Goals](#project-goals)
+- [Fundamentals](#fundamentals)
 - [UX](#ux)
     - [Agile Tools](#Agile-Tools)
 - [Design and Structure](#design-and-structure)
@@ -86,9 +87,6 @@ The layout and design of this site was kept basic and simple. Minimal color was 
 [Kanban Board](https://github.com/users/nianswe/projects/4) was used to create this project.
 User Stories were moved through the process from To do >> In Progress >> Done on the Kanban Board.
 
-Here you can see my overview of my kanban board and moving items around as I was working on them.
-![Kanban Boards](./static/assets/images/features/kanban-board.png)
-
 
 ## Functional Structure
 Home page: The home page contains a navigation menu, logo and a photo collection of all photos uploaded with the status PUBLISH and publish status/pubstatus SHARED.
@@ -150,105 +148,123 @@ The navigation bar is an adaptive element, and on mobile screens it collapses in
 
 ## Pages
 
-### Registration Page - Where a user can sign up to create a user:
+### Registration Page
+#### Where a user can sign up to create a user:
 
 ![Signup](./static/assets/images/signup.jpg)
 
 
-### Login Page - Where a registred user can log-in:
+### Login Page
+####  Where a registred user can log-in:
 
 ![Login](./static/assets/images/login.jpg)
 
 
-### Home Page - Where a guest or logged in user can see collection of photos with status PUBLISH and pubstatus(publish status) SHARED:
+### Home Page
+#### Where a guest or logged in user can see collection of photos with status PUBLISH and pubstatus(publish status) SHARED:
 
 ![Home page](./static/assets/images/home.jpg)
 
 
-### Blog Page - Where an logged in user can view the blog posts and attached images/photos:
+### Blog Page
+#### Where an logged in user can view the blog posts and attached images/photos:
 
 ![Blog](./static/assets/images/blog.jpg)
 
 
-### Photo Page - Where an logged in user can view all images and information about them, like bubilsher and publish date:
+### Photo Page 
+#### Where an logged in user can view all images and information about them, like publisher and publish date:
 
 ![Photos](./static/assets/images/photos.jpg)
 
 
-### Upload Image - Where an logged in user can upload a singel image/photo:
+### Upload Image
+#### Where an logged in user can upload a singel image/photo:
 
 ![upload image](./static/assets/images/upload_image.jpg)
 
 
-### Upload Multiple Image - Where an logged in user can upload multiple images/photos:
+### Upload Multiple Image
+#### Where an logged in user can upload multiple images/photos:
 
 ![upload multiple images](./static/assets/images/upload_multi_image.jpg)
 
 
-### Add Post - Where an logged in user can create a blog posts.
+### Add Post
+#### Where an logged in user can create a blog posts.
 
 ![add post](./static/assets/images/add_post.jpg)
 
 
-### View Blog Post - Where an logged in user can view a blog posts and if auther af the post click Edit Blog to edit:
+### View Blog Post
+#### Where an logged in user can view a blog posts and if auther af the post click Edit Blog to edit:
 
 ![view post](./static/assets/images/view_blog_post.jpg)
 
 
-### Edit and Delete Blog Post - Where an logged in user can edit or delete a blog posts.
-Change title, change body, change photo to another already uploaded photo, change status to Draft if Published and Published if Draft.
-Delete Blog Post:
+### Edit and Delete Blog Post
+#### Where an logged in user can edit or delete a blog posts.
+#### Change title, change body, change photo to another already uploaded photo, change status to Draft if Published and Published if Draft.
+#### Delete Blog Post:
 
 ![edit post](./static/assets/images/edit_blog_post.jpg)
 
 
-### Delete confirmation - Confirmation when a user delete a blog posts.
-Confirmation view when a user choose to delete a blogpost, with possibillity to abort.
+### Delete confirmation
+#### Confirmation when a user delete a blog posts.
+#### Confirmation view when a user choose to delete a blogpost, with possibillity to abort.
 
 ![confirm delete](./static/assets/images/delete_confirm.jpg)
 
 
 ### Footer 
-Footer only include information about Copyright without links.
+#### Footer only include information about Copyright without links.
 
 
-### Main Admin Page - Main Admin page to overview blogs and photos:
+### Main Admin Page
+#### Main Admin page to overview blogs and photos:
 
 ![admin-page](./static/assets/images/admin.jpg)
 
 
-### Admin Blog - Where Admin can view blog posts and choose to edit or delete:
+### Admin Blog
+#### Where Admin can view blog posts and choose to edit or delete:
 
 ![admin-blog](./static/assets/images/admin_blogs.jpg)
 
-### Admin Photos - Where Admin can view all uplodad images.
+### Admin Photos
+#### Where Admin can view all uplodad images.
 
 ![admin-photos](./static/assets/images/admin_photos.jpg)
 
 
-### Admin Blog Add- Where Admin can add a blogposts:
+### Admin Blog Add
+#### Where Admin can add a blogposts:
 
 ![admin-blog-add](./static/assets/images/admin_blogs_add.jpg)
 
 
-### Admin Photos Add - Where Admin can upload and comment new images.
+### Admin Photos Add
+#### Where Admin can upload and comment new images.
 
 ![admin-photos-add](./static/assets/images/admin_photos_add.jpg)
 
 
-### Admin Blog Edit- Where Admin can view blogposts edit information, status or delete a blog post:
+### Admin Blog Edit
+#### Where Admin can view blogposts edit information, status or delete a blog post:
 
 ![admin-blog-edit](./static/assets/images/admin_blog_edit.jpg)
 
 
-### Admin Photos Edit - Where Admin can edit information or delete images.
+### Admin Photos Edit
+#### Where Admin can edit information or delete images.
 
 ![admin-photo-edit](./static/assets/images/admin_photos_edit.jpg)
 
 # Responsive Design
 
-The site has been designed to be responsive and adapted for use on both desktop and mobile devices. The project has been tested using a multi-device emulator with different screen sizes in the Google Chrome Developer Dashboard.
-![responsive](./static/assets/images/validations/iamresponsive.png)
+#### The site has been designed to be responsive and adapted for use on both desktop and mobile devices. The project has been tested using a multi-device emulator with different screen sizes in the Google Chrome Developer Dashboard.
+
 
 # Future Features
 
